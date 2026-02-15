@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy - FiveM Server</title>
+    <title>Zasebnost - Infinity RP</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        body {
+            background-color: #050505;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+
         .privacy-container {
             max-width: 1200px;
             margin: 120px auto 50px;
@@ -24,6 +31,10 @@
             margin-bottom: 1rem;
         }
 
+        .highlight {
+            color: #00f9b9;
+        }
+
         .privacy-header p {
             color: #888;
             font-size: 1.2rem;
@@ -38,20 +49,21 @@
         }
 
         .privacy-card {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 15px;
             padding: 2rem;
-            border: 1px solid rgba(0, 102, 255, 0.2);
+            border: 1px solid rgba(0, 249, 185, 0.1);
             transition: all 0.3s ease;
         }
 
         .privacy-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.2);
+            border-color: #00f9b9;
+            box-shadow: 0 10px 30px rgba(0, 249, 185, 0.1);
         }
 
         .privacy-title {
-            color: #0066ff;
+            color: #00f9b9;
             font-size: 1.5rem;
             margin-bottom: 1rem;
             display: flex;
@@ -60,7 +72,7 @@
         }
 
         .privacy-text {
-            color: #888;
+            color: #ccc;
             line-height: 1.6;
         }
 
@@ -78,22 +90,40 @@
 
         .privacy-text li::before {
             content: '•';
-            color: #0066ff;
+            color: #00f9b9;
             position: absolute;
             left: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 50px;
+            color: #888;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #00f9b9;
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-brand">
-            <i class="fas fa-gamepad"></i>
-            <span>FiveM Server</span>
+            <img src="img/logo.png" alt="Logo" height="40">
+            <span>Infinity RP</span>
         </div>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="rules.html">Rules</a>
-            <a href="team.html">Team</a>
+            <a href="index.html">Domov</a>
+            <a href="rules.html">Pravila</a>
+            <a href="team.html">Ekipa</a>
             <a href="donations.html">Donacije</a>
             <a href="discord.html">Discord</a>
         </div>
@@ -101,59 +131,59 @@
 
     <div class="privacy-container">
         <div class="privacy-header">
-            <h2>Privacy Policy</h2>
-            <p>Information about data collection and usage</p>
+            <h2>Politika <span class="highlight">Zasebnosti</span></h2>
+            <p>Informacije o zbiranju in uporabi vaših podatkov na našem strežniku.</p>
         </div>
 
         <div class="privacy-grid">
             <div class="privacy-card">
-                <h3 class="privacy-title"><i class="fas fa-database"></i> Data Collection</h3>
+                <h3 class="privacy-title"><i class="fas fa-database"></i> Zbiranje podatkov</h3>
                 <div class="privacy-text">
-                    <p>We collect the following data:</p>
+                    <p>Zbiramo naslednje podatke:</p>
                     <ul>
-                        <li>Discord username and ID</li>
-                        <li>Game statistics and achievements</li>
-                        <li>Server interaction logs</li>
-                        <li>Technical information for support</li>
+                        <li>Discord uporabniško ime in ID</li>
+                        <li>Igralna statistika in dosežki</li>
+                        <li>Logi interakcij na strežniku</li>
+                        <li>Tehnične informacije za podporo</li>
                     </ul>
                 </div>
             </div>
 
             <div class="privacy-card">
-                <h3 class="privacy-title"><i class="fas fa-cookie"></i> Cookies</h3>
+                <h3 class="privacy-title"><i class="fas fa-cookie"></i> Piškotki</h3>
                 <div class="privacy-text">
-                    <p>We use cookies to:</p>
+                    <p>Piškotke uporabljamo za:</p>
                     <ul>
-                        <li>Remember your preferences</li>
-                        <li>Improve website performance</li>
-                        <li>Analyze website usage</li>
-                        <li>Provide personalized content</li>
+                        <li>Shranjevanje vaših nastavitev</li>
+                        <li>Izboljšanje delovanja strani</li>
+                        <li>Analizo obiska spletne strani</li>
+                        <li>Zagotavljanje prilagojene vsebine</li>
                     </ul>
                 </div>
             </div>
 
             <div class="privacy-card">
-                <h3 class="privacy-title"><i class="fas fa-shield-alt"></i> Data Security</h3>
+                <h3 class="privacy-title"><i class="fas fa-shield-alt"></i> Varnost podatkov</h3>
                 <div class="privacy-text">
-                    <p>We implement security measures:</p>
+                    <p>Izvajamo naslednje varnostne ukrepe:</p>
                     <ul>
-                        <li>Encrypted data transmission</li>
-                        <li>Regular security updates</li>
-                        <li>Access control systems</li>
-                        <li>Secure server infrastructure</li>
+                        <li>Šifriran prenos podatkov</li>
+                        <li>Redne varnostne posodobitve</li>
+                        <li>Sistemi za nadzor dostopa</li>
+                        <li>Varna strežniška infrastruktura</li>
                     </ul>
                 </div>
             </div>
 
             <div class="privacy-card">
-                <h3 class="privacy-title"><i class="fas fa-user-shield"></i> Your Rights</h3>
+                <h3 class="privacy-title"><i class="fas fa-user-shield"></i> Vaše pravice</h3>
                 <div class="privacy-text">
-                    <p>You have the right to:</p>
+                    <p>Imate pravico do:</p>
                     <ul>
-                        <li>Access your personal data</li>
-                        <li>Request data correction</li>
-                        <li>Request data deletion</li>
-                        <li>Object to data processing</li>
+                        <li>Dostopa do vaših osebnih podatkov</li>
+                        <li>Zahtevka za popravek podatkov</li>
+                        <li>Zahtevka za izbris podatkov</li>
+                        <li>Ugovora obdelavi podatkov</li>
                     </ul>
                 </div>
             </div>
@@ -163,15 +193,15 @@
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="imprint.html" target="_blank">Imprint</a>
-                <a href="privacy.html" target="_blank">Privacy</a>
+                <a href="imprint.html">Impresum</a>
+                <a href="privacy.html">Zasebnost</a>
             </div>
             <div class="footer-copyright">
-                &copy; 2024 FiveM Server. All rights reserved.
+                &copy; 2026 Infinity RP. Vse pravice pridržane.
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
 </body>
-</html> 
+</html>
