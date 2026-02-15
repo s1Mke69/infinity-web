@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord - Infinity RolePlay</title>
+    <title>Infinity RolePlay - Dobrodošli</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Tvoj obstoječi stil za Navbar */
+        /* Tvoji obstoječi slogi ostanejo enaki */
         .navbar {
             background: rgba(0, 0, 0, 0.95);
             padding: 1.2rem 2rem;
@@ -32,18 +32,12 @@
             align-items: center;
             gap: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        /* Stil za tvoj nov logo */
         .nav-logo {
-            height: 45px;
+            height: 45px; 
             width: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-brand:hover .nav-logo {
-            transform: scale(1.1);
+            object-fit: contain;
         }
 
         .nav-links {
@@ -53,272 +47,139 @@
             background: rgba(0, 249, 185, 0.1);
             padding: 0.5rem 1.5rem;
             border-radius: 50px;
-            border: 1px solid rgba(0, 249, 185, 0.1);
         }
 
         .nav-links a {
             color: #888;
             text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            text-transform: uppercase;
-            border-radius: 20px;
+            transition: 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a.active {
             color: #00f9b9;
-            background: rgba(0, 249, 185, 0.1);
         }
 
-        /* Discord specifični stili */
-        .discord-container {
-            max-width: 1200px;
-            margin: 120px auto 50px;
-            padding: 2rem;
-        }
-
-        .discord-header {
+        /* Hero sekcija */
+        .hero {
+            padding: 150px 20px 100px;
             text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .discord-header h2 {
-            font-size: 3.5rem;
-            color: #fff;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 20px rgba(0, 249, 185, 0.3);
-        }
-
-        .highlight { color: #00f9b9; }
-
-        .discord-header p {
-            color: #888;
-            font-size: 1.2rem;
-        }
-
-        .discord-content {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .discord-card {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(0, 249, 185, 0.1);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .discord-card:hover {
-            border-color: rgba(0, 249, 185, 0.4);
-            transform: translateY(-5px);
-        }
-
-        .discord-card h3 {
-            color: #00f9b9;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .discord-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .feature-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1rem;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: #fff;
-        }
-
-        .feature-item i { color: #00f9b9; }
-
-        .discord-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            background: rgba(0, 249, 185, 0.05);
-            padding: 1rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .stat-item .number {
-            color: #00f9b9;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-
-        .discord-join-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            background: #5865F2;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/hero-bg.jpg');
+            background-size: cover;
             color: white;
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #00f9b9;
+            color: #000;
             text-decoration: none;
-            font-size: 1.3rem;
+            border-radius: 5px;
             font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .discord-join-button:hover {
-            background: #4752c4;
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
-        }
-
-        footer {
-            background: #000;
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 2px solid rgba(0, 249, 185, 0.3);
-            color: #fff;
-        }
-
-        .footer-links a {
-            color: #888;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        @media (max-width: 968px) {
-            .discord-content { grid-template-columns: 1fr; }
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-brand">
-            <img src="img/logo.png" alt="Logo" class="nav-logo">
-            <span>Infinity RP</span>
+            <img src="img/logo.png" alt="Infinity Logo" class="nav-logo">
+            <span>Infinity RolePlay</span>
         </div>
         <div class="nav-links">
-            <a href="index.html">Domov</a>
+            <a href="index.html" class="active">Domov</a>
             <a href="rules.html">Pravila</a>
             <a href="team.html">Ekipa</a>
             <a href="donations.html">Donacije</a>
-            <a href="discord.html" class="active">Discord</a>
+            <a href="discord.html">Discord</a>
         </div>
     </nav>
 
-    <div class="discord-container">
-        <div class="discord-header">
-            <h2>Naš <span class="highlight">Discord</span></h2>
-            <p>Pridruži se naši rastoči skupnosti in bodi na tekočem z vsemi novostmi!</p>
-        </div>
-
-        <div class="discord-content">
-            <div class="discord-info">
-                <div class="discord-card">
-                    <h3><i class="fab fa-discord"></i> Center skupnosti</h3>
-                    <p>Naš Discord strežnik je srce naše skupnosti. Tukaj boš našel vse pomembne informacije, klepetal z drugimi igralci in prejemal najnovejše posodobitve.</p>
-                    
-                    <div class="discord-features">
-                        <div class="feature-item">
-                            <i class="fas fa-bullhorn"></i>
-                            <span>Obvestila</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-users"></i>
-                            <span>Aktivna skupnost</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-headset"></i>
-                            <span>Govorni kanali</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-ticket-alt"></i>
-                            <span>Podpora (Ticket)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="discord-card">
-                    <h3><i class="fas fa-chart-line"></i> Statistika strežnika</h3>
-                    <div class="discord-stats">
-                        <div class="stat-item">
-                            <div class="number">1000+</div>
-                            <div class="label">Članov</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="number">24/7</div>
-                            <div class="label">Podpora</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="number">50+</div>
-                            <div class="label">Dnevno aktivnih</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="discord-card">
-                    <h3><i class="fas fa-star"></i> Ekskluzivne ugodnosti</h3>
-                    <p>Kot član našega Discorda dobiš dostop do posebnih ugodnosti:</p>
-                    <div class="discord-features">
-                        <div class="feature-item">
-                            <i class="fas fa-gift"></i>
-                            <span>Nagrade</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-crown"></i>
-                            <span>Posebni čini</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>Dogodki</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-comments"></i>
-                            <span>Klepet</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="discord-widget">
-                <iframe src="https://discord.com/widget?id=1171802922997256267&theme=dark" 
-                        width="100%" 
-                        height="600" 
-                        allowtransparency="true" 
-                        frameborder="0"
-                        style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 249, 185, 0.1);">
-                </iframe>
-            </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="https://discord.ggBj4ar4Rcq4" class="discord-join-button" target="_blank">
-                <i class="fab fa-discord"></i>
-                Pridruži se nam na Discordu!
-            </a>
+    <div class="disclaimer" id="disclaimer">
+        <div class="disclaimer-content">
+            <i class="fas fa-info-circle"></i>
+            <p>Ta strežnik ni uradno povezan z Rockstar Games. FiveM je tretjeosebna modifikacija za GTA V.</p>
+            <a href="https://www.rockstargames.com/legal" target="_blank">Preberi več</a>
+            <button class="disclaimer-close" onclick="closeDisclaimer()">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
     </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Dobrodošli na našem FiveM strežniku</h1>
+            <p>Doživite vrhunsko RolePlay avanturo v edinstvenem in poglobljenem okolju.</p>
+            <a href="discord.html" class="cta-button">Pridruži se zdaj</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Aktivna skupnost</h3>
+                    <p>Postanite del naše rastoče skupnosti RolePlay navdušencev in spoznajte nove prijatelje.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Po meri narejena vozila</h3>
+                    <p>Raziščite našo obsežno zbirko unikatnih vozil in raznih modifikacij.</p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="feature-content">
+                    <h3>Anti-Cheat sistem</h3>
+                    <p>Igrajte v poštenem okolju z našo napredno zaščito proti goljufanju.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="server-stats">
+        <div class="stats-container">
+            <h2>Statistika strežnika</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>64</h3>
+                        <p>Slotov</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>24/7</h3>
+                        <p>Delovanje strežnika</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="imprint.html">Pravno obvestilo</a>
-                <a href="privacy.html">Zasebnost</a>
+                <a href="imprint.html" target="_blank">Odtis</a>
+                <a href="privacy.html" target="_blank">Zasebnost</a>
             </div>
             <div class="footer-copyright">
                 &copy; 2026 Infinity. Vse pravice pridržane.
@@ -327,5 +188,18 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        function closeDisclaimer() {
+            const disclaimer = document.getElementById('disclaimer');
+            disclaimer.style.opacity = '0';
+            setTimeout(() => {
+                disclaimer.style.display = 'none';
+            }, 300);
+            localStorage.setItem('disclaimerClosed', 'true');
+        }
+        if (localStorage.getItem('disclaimerClosed') === 'true') {
+            document.getElementById('disclaimer').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
