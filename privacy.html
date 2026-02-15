@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zasebnost - Infinity RP</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #050505;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
 
+        /* Enaka glava kot na team.html */
+        .header-section {
+            padding: 100px 2rem 50px;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(0, 249, 185, 0.05), transparent);
+        }
+
+        .header-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .highlight {
+            color: #00f9b9;
+            text-shadow: 0 0 20px rgba(0, 249, 185, 0.4);
+        }
+
+        /* Grid sistem za kartice */
+        .privacy-grid {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 0 2rem;
+        }
+
+        /* Stil kartic enak kot na team.html */
+        .privacy-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .privacy-card:hover {
+            transform: translateY(-10px);
+            border-color: #00f9b9;
+            box-shadow: 0 15px 40px rgba(0, 249, 185, 0.15);
+        }
+
+        .privacy-card i {
+            font-size: 2.5rem;
+            color: #00f9b9;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .privacy-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .privacy-card p {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .privacy-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .privacy-card li {
+            color: #ccc;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .privacy-card li::before {
+            content: "→";
+            color: #00f9b9;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="img/logo.png" alt="Logo" height="40">
+            <span>Infinity RP</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Domov</a>
+            <a href="rules.html">Pravila</a>
+            <a href="team.html">Ekipa</a>
+            <a href="donations.html">Donacije</a>
+            <a href="discord.html">Discord</a>
+        </div>
+    </nav>
+
+    <section class="header-section">
+        <h1>Politika <span class="highlight">Zasebnosti</span></h1>
+        <p>Infinity RolePlay varnost in zasebnost igralcev postavlja na prvo mesto.</p>
+    </section>
+
+    <div class="privacy-grid">
+        <div class="privacy-card">
+            <i class="fas fa-user-secret"></i>
+            <h3>Zbiranje podatkov</h3>
+            <p>Za nemoteno igranje zbiramo le nujne podatke:</p>
+            <ul>
+                <li>Discord ID in ime</li>
+                <li>Igralni dosežki</li>
+                <li>Zgodovina interakcij</li>
+            </ul>
+        </div>
+
+        <div class="privacy-card">
+            <i class="fas fa-cookie-bite"></i>
+            <h3>Piškotki</h3>
+            <p>Naša stran uporablja piškotke za boljšo izkušnjo:</p>
+            <ul>
+                <li>Shranjevanje prijav</li>
+                <li>Analitika obiska</li>
+                <li>Hitrejše nalaganje</li>
+            </ul>
+        </div>
+
+        <div class="privacy-card">
+            <i class="fas fa-user-shield"></i>
+            <h3>Vaše pravice</h3>
+            <p>Vsak igralec ima popoln nadzor nad podatki:</p>
+            <ul>
+                <li>Vpogled v podatke</li>
+                <li>Zahteva za izbris</li>
+                <li>Popravek napak</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Infinity RolePlay. Vse pravice pridržane.
+    </footer>
+
+</body>
+</html>
