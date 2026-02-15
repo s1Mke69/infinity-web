@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekipa - Infinity RolePlay</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Navbar Stil */
+        .navbar {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1.2rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(0, 249, 185, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-logo {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            background: rgba(0, 249, 185, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 249, 185, 0.1);
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            text-transform: uppercase;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #00f9b9;
+            background: rgba(0, 249, 185, 0.1);
+        }
+
+        /* Team Content */
+        .team-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 120px auto 50px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .team-content h1 {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-shadow: 0 0 20px rgba(0, 249, 185, 0.3);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(0, 249, 185, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 249, 185, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 249, 185, 0.1);
+        }
+
+        /* Stil za glave (ikone) */
+        .team-avatar {
+            width: 130px;
+            height: 130px;
+            background: rgba(0, 249, 185, 0.05);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 3px solid #00f9b9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #00f9b9;
+            box-shadow: 0 0 15px rgba(0, 249, 185, 0.2);
+        }
+
+        .team-name {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .team-rank {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            background: #00f9b9;
+            border-radius: 50px;
+            color: #000;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .team-discord {
+            color: #5865F2;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Modal Stil */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: #0a0a0a;
+            border: 1px solid #00f9b9;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            text-align: left;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .modal-title { color: #00f9b9; margin-bottom: 1rem; }
+        .tasks-list { margin-top: 1rem; padding-left: 1.2rem; color: #ccc; }
+        .tasks-list li { margin-bottom: 0.5rem; }
+
+        footer {
+            background: #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 2px solid rgba(0, 249, 185, 0.3);
+            color: #fff;
+            margin-top: 5rem;
+        }
+
+        .footer-links a { color: #888; text-decoration: none; margin: 0 15px; }
+    </style>
+</head>
+<body style="background-color: #050505;">
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="img/logo.png" alt="Logo" class="nav-logo">
+            <span>Infinity RP</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Domov</a>
+            <a href="rules.html">Pravila</a>
+            <a href="team.html" class="active">Ekipa</a>
+            <a href="donations.html">Donacije</a>
+            <a href="discord.html">Discord</a>
+        </div>
+    </nav>
+
+    <main class="team-content">
+        <h1>Naša <span class="highlight">Ekipa</span></h1>
+        
+        <div class="team-grid">
+            <div class="team-card" data-member="s1mke">
+                <div class="team-avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h2 class="team-name">S1Mke</h2>
+                <span class="team-rank">Server Owner</span>
+                <div class="team-discord">
+                    <i class="fab fa-discord"></i> s1Mke69
+                </div>
+            </div>
+
+            <div class="team-card" data-member="micka">
+                <div class="team-avatar">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h2 class="team-name">Micka</h2>
+                <span class="team-rank">Head Admin</span>
+                <div class="team-discord">
+                    <i class="fab fa-discord"></i> funtimesforlife
+                </div>
+            </div>
+
+            <div class="team-card" data-member="kavdek">
+                <div class="team-avatar">
+                    <i class="fas fa-user-gear"></i>
+                </div>
+                <h2 class="team-name">Kavdek</h2>
+                <span class="team-rank">Admin</span>
+                <div class="team-discord">
+                    <i class="fab fa-discord"></i> nejko7smejko
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="teamModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title"></h2>
+            <p class="modal-text"></p>
+            <div class="modal-tasks">
+                <h3>Zadolžitve:</h3>
+                <ul class="tasks-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="imprint.html">Pravno obvestilo</a>
+            <a href="privacy.html">Zasebnost</a>
+        </div>
+        <div style="margin-top: 10px;">&copy; 2026 Infinity. Vse pravice pridržane.</div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('teamModal');
+            const modalTitle = modal.querySelector('.modal-title');
+            const modalText = modal.querySelector('.modal-text');
+            const tasksList = modal.querySelector('.tasks-list');
+            const closeModal = modal.querySelector('.close-modal');
+            const teamCards = document.querySelectorAll('.team-card');
+
+            const teamInfo = {
+                s1mke: {
+                    title: 'S1Mke - Server Owner',
+                    text: 'Ustanovitelj in lastnik Infinity RP strežnika. Skrbi za celoten razvoj in vizijo projekta.',
+                    tasks: ['Strateško načrtovanje', 'Vodenje ekipe', 'Finančna odgovornost', 'Partnerstva']
+                },
+                micka: {
+                    title: 'Micka - Head Admin',
+                    text: 'Skrbi, da vsi administrativni procesi tečejo nemoteno in da so pravila pravično uveljavljena.',
+                    tasks: ['Vodenje admin ekipe', 'Finančna odgovornost', 'Upravljanje pravilnika', 'Koordinacija dogodkov', 'Nadzor kakovosti RP-ja']
+                },
+                kavdek: {
+                    title: 'Kavdek - Admin',
+                    text: 'Tehnična podpora in pomoč igralcem pri vsakodnevnih težavah na strežniku.',
+                    tasks: ['Pomoč igralcem', 'Nadzor nad kršitvami', 'Tehnično vzdrževanje', 'Pregled prijav']
+                }
+            };
+
+            teamCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const member = this.dataset.member;
+                    const info = teamInfo[member];
+                    if(info) {
+                        modalTitle.textContent = info.title;
+                        modalText.textContent = info.text;
+                        tasksList.innerHTML = '';
+                        info.tasks.forEach(task => {
+                            const li = document.createElement('li');
+                            li.textContent = task;
+                            tasksList.appendChild(li);
+                        });
+                        modal.style.display = 'flex';
+                    }
+                });
+            });
+
+            closeModal.addEventListener('click', () => modal.style.display = 'none');
+            window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+        });
+    </script>
+</body>
+</html>

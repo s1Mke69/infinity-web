@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donacije - Infinity RolePlay</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .navbar {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1.2rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(0, 249, 185, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .nav-logo {
+            height: 45px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            background: rgba(0, 249, 185, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(0, 249, 185, 0.1);
+        }
+
+        .nav-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            text-transform: uppercase;
+            border-radius: 20px;
+        }
+
+        .nav-links a:hover { color: #fff; }
+
+        .nav-links a.active {
+            color: #000 !important; 
+            background: #00f9b9 !important; 
+            box-shadow: 0 0 15px rgba(0, 249, 185, 0.3);
+        }
+
+        .donation-container {
+            max-width: 1200px;
+            margin: 140px auto 50px;
+            padding: 2rem;
+            color: #fff;
+        }
+
+        .donation-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .donation-header h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .highlight { color: #00f9b9; }
+
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .donation-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(0, 249, 185, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-10px);
+            border-color: #00f9b9;
+            box-shadow: 0 10px 30px rgba(0, 249, 185, 0.2);
+        }
+
+        .donation-card i.main-icon {
+            font-size: 3rem;
+            color: #00f9b9;
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            color: #fff;
+        }
+
+        .price span { font-size: 1.2rem; color: #00f9b9; }
+
+        .duration {
+            display: block;
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
+            margin-top: -10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            text-align: left;
+            font-size: 0.95rem;
+            color: #bbb;
+        }
+
+        .features-list li {
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list i { color: #00f9b9; font-size: 0.8rem; }
+
+        .btn-donate {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #00f9b9;
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-donate:hover {
+            background: #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        footer {
+            background: #000;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-top: 2px solid rgba(0, 249, 185, 0.3);
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color: #050505;">
+    
+    <nav class="navbar">
+    <div class="nav-brand">
+        <img src="img/logo.png" alt="Logo" style="width: 40px; height: auto;">
+        <span>Infinity RP</span>
+    </div>
+        <div class="nav-links">
+            <a href="index.html">Domov</a>
+            <a href="rules.html">Pravila</a>
+            <a href="team.html">Ekipa</a>
+            <a href="donations.html" class="active">Donacije</a>
+            <a href="discord.html">Discord</a>
+        </div>
+    </nav>
+
+    <div class="donation-container">
+        <div class="donation-header">
+            <h1>Donacijski <span class="highlight">Paketi</span></h1>
+            <p>Izberi paket in podpri delovanje našega strežnika.</p>
+        </div>
+
+        <div class="donation-grid">
+            <div class="donation-card">
+                <div>
+                    <i class="fas fa-car main-icon"></i>
+                    <h3>Custom Avto</h3>
+                    <div class="price">20<span>€</span></div>
+                    <span class="duration">Enkratno plačilo</span>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Avto po tvoji želji</li>
+                        <li><i class="fas fa-check"></i> Lastna tablica</li>
+                        <li><i class="fas fa-check"></i> Polno tunan</li>
+                    </ul>
+                </div>
+                <a href="https://www.paypal.com/paypalme/Simke5434/20EUR" target="_blank" class="btn-donate">Naroči</a>
+            </div>
+
+            <div class="donation-card">
+                <div>
+                    <i class="fas fa-home main-icon"></i>
+                    <h3>Custom Hiša</h3>
+                    <div class="price">50<span>€</span></div>
+                    <span class="duration">Enkratno plačilo</span>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Izbira lokacije</li>
+                        <li><i class="fas fa-check"></i> Custom interier</li>
+                        <li><i class="fas fa-check"></i> Velika garaža</li>
+                    </ul>
+                </div>
+                <a href="https://www.paypal.com/paypalme/Simke5434/50EUR" target="_blank" class="btn-donate">Naroči</a>
+            </div>
+
+            <div class="donation-card">
+                <div>
+                    <i class="fas fa-briefcase main-icon"></i>
+                    <h3>Organizacija</h3>
+                    <div class="price">15<span>€</span></div>
+                    <span class="duration">Lifetime</span>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Legalna organizacija</li>
+                        <li><i class="fas fa-check"></i> Pisarna/Baza</li>
+                        <li><i class="fas fa-check"></i> Dostop do menija</li>
+                    </ul>
+                </div>
+                <a href="https://www.paypal.com/paypalme/Simke5434/15EUR" target="_blank" class="btn-donate">Naroči</a>
+            </div>
+
+            <div class="donation-card">
+                <div>
+                    <i class="fas fa-skull main-icon"></i>
+                    <h3>Gang</h3>
+                    <div class="price">15<span>€</span></div>
+                    <span class="duration">Lifetime</span>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Ilegalna tolpa</li>
+                        <li><i class="fas fa-check"></i> Gang baza</li>
+                        <li><i class="fas fa-check"></i> Orožarna in skladišče</li>
+                    </ul>
+                </div>
+                <a href="https://www.paypal.com/paypalme/Simke5434/15EUR" target="_blank" class="btn-donate">Naroči</a>
+            </div>
+        </div>
+
+        <p style="text-align: center; color: #888; margin-top: 40px; font-style: italic; font-size: 0.9rem;">
+            * Po opravljeni donaciji obvezno slikaj potrdilo in odpri Ticket na našem <a href="discord.html" style="color: #00f9b9; text-decoration: none; border-bottom: 1px dashed;">Discordu</a> za prevzem paketa.
+        </p>
+    </div>
+
+    <footer>
+        <p style="color: #555;">&copy; 2026 Infinity RP. Vse pravice pridržane.</p>
+    </footer>
+
+</body>
+</html>
